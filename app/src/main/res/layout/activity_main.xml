@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/Zar"
+        android:id="@+id/imageView_Dice"
         android:layout_width="283dp"
         android:layout_height="310dp"
         android:layout_marginTop="44dp"
@@ -17,17 +17,17 @@
         app:srcCompat="@drawable/ic_question" />
 
     <Button
-        android:id="@+id/ZarAt"
+        android:id="@+id/button_RollDice"
         android:layout_width="189dp"
         android:layout_height="39dp"
         android:text="Zar At"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Zar" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_Dice" />
 
     <TextView
-        android:id="@+id/metin"
+        android:id="@+id/textView_Result"
         android:layout_width="255dp"
         android:layout_height="75dp"
         android:fontFamily="monospace"
@@ -35,9 +35,9 @@
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_dark"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ZarAt"
+        app:layout_constraintBottom_toTopOf="@+id/button_RollDice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Zar"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_Dice"
         app:layout_constraintVertical_bias="0.584" />
 </androidx.constraintlayout.widget.ConstraintLayout>

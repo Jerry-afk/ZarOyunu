@@ -8,40 +8,30 @@ import android.widget.TextView
 import kotlin.random.Random as Random
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var ZarAt:Button
-    private lateinit var Zar:ImageView
-    private lateinit var metin:TextView
+    private lateinit var roll_Dice:Button
+    private lateinit var dice_VEC:ImageView
+    private lateinit var result_Text:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        metin=findViewById(R.id.metin)
-        Zar=findViewById(R.id.Zar)
-        ZarAt=findViewById(R.id.ZarAt)
-        ZarAt.setOnClickListener {
+        result_Text=findViewById(R.id.textView_Result)
+        dice_VEC=findViewById(R.id.imageView_Dice)
+        roll_Dice=findViewById(R.id.button_RollDice)
+        roll_Dice.setOnClickListener {
            rollDice()
         }
-
-
     }
     private fun rollDice(){
         val randomInt= Random.nextInt(6)+1
-        var drawableResource=R.drawable.ic_question
-        var sonuc=""
-        when(randomInt){
-            1 -> { drawableResource=R.drawable.ic_dice_1
-                sonuc="Tekrar Denemelisin Gelen Sayı 1"}
-            2 -> {drawableResource=R.drawable.ic_dice_2
-                sonuc="Sanırım Zar Atmak Sana Göre Değil Gelen Sayı 2"}
-            3 -> {drawableResource=R.drawable.ic_dice_3
-                sonuc="İdare Eder Daha İyisini Yapmalısın Gelen Sayı 3"}
-            4 -> {drawableResource=R.drawable.ic_dice_4
-                sonuc="İyi Sayılır Gelen Sayı 4"}
-            5 -> {drawableResource=R.drawable.ic_dice_5
-                sonuc="Çok Yakındı Gelen Sayı 5"}
-            else -> {drawableResource=R.drawable.ic_dice_6
-                sonuc="Zirvedesin Tadını Çıkar Gelen Sayı 6" }
+        var drawableResource=when(randomInt){
+            1 -> R.drawable.ic_dice_1
+            2 -> R.drawable.ic_dice_2
+            3 -> R.drawable.ic_dice_3
+            4 -> R.drawable.ic_dice_4
+            5 -> R.drawable.ic_dice_5
+            else -> R.drawable.ic_dice_6
         }
-        Zar.setImageResource(drawableResource)
-        metin.text=sonuc
+        dice_VEC.setImageResource(drawableResource)
+        result_Text.text="Gelen Zar $randomInt "
     }
 }
